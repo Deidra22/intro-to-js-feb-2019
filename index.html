@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Intro to JS</title>
-    <script src="./js/test.js"></script>
+    <title>List</title>
 </head>
 <body>
-    <h1>Intro to JS</h1>
-<ul>
-    <li>
-        <a href="./day-1">day 1</a>
-    </li>
-</ul>
-<h1>Test</h1>
+
+<script>
+    const listInput = document.createElement('input');
+    document.body.appendChild(listInput);
+    const button = document.createElement('button');
+    document.body.appendChild(button);
+    const ul = document.createElement('ul');
+    document.body.appendChild(ul);
+
+    button.innerText = 'Submit';
+
+    button.addEventListener('click', addToList );
+    function addToList() {
+        const li = document.createElement('li');
+        ul.appendChild(li);
+
+        li.innerText = listInput.value;
+
+        listInput.value = '';
+    }
+</script>
 </body>
 </html>
