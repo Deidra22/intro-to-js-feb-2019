@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic DOM</title>
+    <style>
+        pre {
+            background-color: antiquewhite;
+            color: black;
+            display: inline;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Basic Dom</h1>
+    <p>All websites are represented with the Document Object Model (DOM).</p>
+    <p>The Document Object has one 'child' element named body. It is another Object.</p>
+    <p>All elements that are visible to the user are objects nested in the body object.</p>
+<ul>
+    <li>
+        <h2>Keywords</h2>
+        <ul>
+            <li>
+                <h3>document</h3>
+                <p>This keyword is a variable that holds the entire website.</p>
+                    <h4>example</h4>
+                <span>
+                    <pre>console.log(document);</pre>
+                </span>
+            </li>
+            <li>
+                <h3>createElement</h3>
+                <p>This is a method on the document object that can create new HTMLElements.</p>
+                <h4>example</h4>
+                <span>
+                    <pre>const myDiv = document.createElement('div');</pre>
+                </span>
+            </li>
+            <li>
+                <h3>appendChild</h3>
+                <p>After we create an element we can not see it unless we place it somewhere on the page.</p>
+                <h4>example</h4>
+                <span>
+                    <pre>document.body.appendChild(myDiv);</pre>
+                </span>
+                <p>We don't always have to append to the body.</p>
+                <span>
+                    <pre>myDiv.body.appendChild(mySpan);</pre>
+                </span>
+            </li>
+            <li>
+                <h3>Listeners</h3>
+                <p>This will tell an element when an event happens run a function</p>
+                <h4>example</h4>
+                <span>
+                    <pre>document.body.addEventListener('click', function () { alert( 'you clicked me'); }</pre>
+                </span>
+            </li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

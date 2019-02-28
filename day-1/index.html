@@ -3,8 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Day 1</title>
+    <style>
+        .clicked {
+            background-color: green;
+            font-size: 90px;
+            color: white;
+        }
+        button {
+            transition: all 1s ease;
+        }
+    </style>
 </head>
 <body>
-    test
+
+<p>When you click the button the button will wait 1 second then change color.</p>
+<button>
+    click me
+</button>
+    <script>
+        // we need colors to change the button to
+        const colors = ['blue', 'red', 'green'];
+        colors.push('orange');
+        colors.unshift('yellow');
+        // we need a color to start with
+        let currentColor = 0;
+        // we need a button to click
+        const button = document.getElementsByTagName('button')[0];
+        // we need to tell the button what to do when we click it
+        button.addEventListener('click', whenClicked );
+        function whenClicked() {
+            setTimeout( () => {
+                button.style.backgroundColor = colors[currentColor];
+                currentColor++;
+                if (currentColor >= colors.length) {
+                    currentColor = 0;
+                }
+            }, 1000);
+        }
+    </script>  
 </body>
 </html>

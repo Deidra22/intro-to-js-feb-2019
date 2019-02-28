@@ -2,29 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>List</title>
+    <title>Intro to JS</title>
+    <script src="./js/test.js"></script>
+    <style>
+        body, html{
+            min-height: 100%;
+        }
+        h1 {
+            text-align: center;
+            display: inline-block;
+            margin: 0 auto;
+            font-weight: 400;
+            font-size: 5em;
+            background: linear-gradient(30deg, #e05252 0%, green 25%, cornflowerblue 50%, yellow 75%, moccasin 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .main-holder {
+            display: flex;
+            margin-top: 1em;
+            margin-bottom: 1em;
+
+        }
+        .main-holder > * {
+            box-shadow: 2px 4px 26px 5px rgba(0,0,0,0.75);
+            width: 50%;
+            padding: 1em;
+            background-color: cornflowerblue;
+            margin: .5em;
+        }
+
+        .main-holder > * > ul{
+            list-style: none;
+        }
+
+        h4  {
+            margin: 2px;
+        }
+        li {
+            margin: .3em;
+        }
+        .repo {
+            color: cornflowerblue;
+        }
+        .left {
+            transform: translateX(-50vw);
+        }
+        .right {
+            transform: translateX(50vw);
+        }
+        .down {
+            transform: translateY(100vh);
+        }
+        .move {
+            transition: all .7s ease-in;
+        }
+        .top {
+            transform: translateY(-10vh);
+            color: black;
+        }
+    </style>
 </head>
 <body>
+    <h1 class="top move">Intro to JS</h1>
+    <span class="repo">original repository: <span><a href="https://github.com/geekwisevinson/intro-to-js-feb-2019">intro-to-js-feb-2019</a></span></span>
+    <div class="main-holder">
+        <div class="left move">
+            <h2>What we have learned</h2>
+            <ul>
+                <li>
+                    <h4>Day1</h4>
+                    <ul>
+                        <li><a href="./1-what-we-learned/declaration.html">Declarations</a></li>
+                        <li><a href="./1-what-we-learned/basic-dom.html">Basic Dom</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="right move">
+            <h2>What we have built</h2>
+            <ul>
+                <li>
+                    <h4>Day 1</h4>
+                    <ul>
+                        <li>
+                            <a href="./day-1">button</a>
+                        </li>
+                        <li>
+                            <a href="./day-1/challenge/vinson.html">challenge</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-<script>
-    const listInput = document.createElement('input');
-    document.body.appendChild(listInput);
-    const button = document.createElement('button');
-    document.body.appendChild(button);
-    const ul = document.createElement('ul');
-    document.body.appendChild(ul);
+<div class="main-holder">
+    <div class="down move">
+        <h3>External Resources</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN JavaScript</a></li>
+        </ul>
+    </div>
+    <div class="down move">
+        <h3>Simple Thoughts</h3>
+        <ul>
+            <li><a href="./2-things-i-can-do/">What can I do as a programmer?</a></li>
+        </ul>
+    </div>
+</div>
 
-    button.innerText = 'Submit';
-
-    button.addEventListener('click', addToList );
-    function addToList() {
-        const li = document.createElement('li');
-        ul.appendChild(li);
-
-        li.innerText = listInput.value;
-
-        listInput.value = '';
-    }
-</script>
+    <script>
+        setTimeout(() => {
+            const allMoves = document.querySelectorAll('.move');
+            allMoves.forEach( item => {
+                item.classList.remove('left');
+                item.classList.remove('right');
+                item.classList.remove('down');
+                console.log('ran')
+            });
+            document.querySelector('h1').classList.remove('top')
+        }, 10)
+    </script>
 </body>
 </html>

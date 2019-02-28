@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<h1>List</h1>
+<p>type in an item and press submit</p>
+
+<script>
+    const listInput = document.createElement('input');
+    document.body.appendChild(listInput);
+    const button = document.createElement('button');
+    document.body.appendChild(button);
+    const ul = document.createElement('ul');
+    document.body.appendChild(ul);
+
+    button.innerText = 'Submit';
+
+    button.addEventListener('click', addToList );
+    function addToList() {
+        const li = document.createElement('li');
+        ul.appendChild(li);
+
+        li.innerText = listInput.value;
+
+        listInput.value = '';
+    }
+</script>
+</body>
+</html>
